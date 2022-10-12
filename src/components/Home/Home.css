@@ -1,5 +1,5 @@
 .home-container{
-     display: grid;
+    display: grid;
     background-color: rgb(170, 204, 238);
 }
 
@@ -13,6 +13,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: -10%;
+    margin-bottom: 5%;
     width: auto;
     justify-content: center;
     gap: 50px;
