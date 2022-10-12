@@ -8,8 +8,8 @@ const TestDetails = () => {
     const questions = data.data.questions;
 
     return (
-        <div>
-            <h2>{name} Test</h2>
+        <div class="bg-gray-400">
+            <h2 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{name} Test</h2>
             <h4>Answer {total} Questions</h4>
             {
                 questions.map( question =><Questions key={question.id}
