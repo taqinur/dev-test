@@ -1,9 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useParams } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Blog/Blog';
 import ErrorPage from './components/ErrorPage';
 import Home from './components/Home/Home';
 import Statistics from './components/Statistics/Statistics';
+import TestDetails from './components/TestDetails/TestDetails';
 import Main from './layout/Main';
 
 function App() {
@@ -25,9 +26,15 @@ function App() {
         {
           path: '/blog',
           element: <Blog></Blog>
+        },
+        {
+          path: '/test/:id',
+          element: <TestDetails></TestDetails>,
+          // loader: {(params)} =>
+          // fetch(`https://openapi.programming-hero.com/api/quiz/${param.id}`)
         }
-      ]
-    }
+      ],
+    },
   ])
 
   return (
