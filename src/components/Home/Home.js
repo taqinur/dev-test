@@ -6,14 +6,16 @@ import './Home.css';
 const Home = () => {
     const testDetails = useLoaderData();
     const tests = testDetails.data;
-    console.log(tests);
+    
     return (
-        <div className="test-container">
+        <div className="home-container">
+            <div className="test-container">
             {
                 tests.map(test => <Test key={test.id}
                 test={test}>
                 </Test>)
             }
+        </div>
         </div>
     );
 };
