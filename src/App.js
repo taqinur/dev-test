@@ -30,8 +30,8 @@ function App() {
         {
           path: '/test/:id',
           element: <TestDetails></TestDetails>,
-          // loader: {(params)} =>
-          // fetch(`https://openapi.programming-hero.com/api/quiz/${param.id}`)
+          loader: ({params}) =>
+          fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
         }
       ],
     },
