@@ -1,12 +1,34 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Questions = ({questions}) => {
     console.log(questions);
     const {question, options, correctAnswer} = questions; 
+      
+
+    const notify = () => toast.info(`Correct answer: ${correctAnswer}`, {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });;
 
     return (
         <div class="mx-auto mt-6 p-6 max-w-xl bg-white rounded-lg border border-gray-300 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{question.slice(3,-4)}</h5>
+            <div class = "flex flex-row">
+            <h5 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{question.slice(3,-4)}</h5>
+            <button onClick={notify}><FontAwesomeIcon icon={faEye}></FontAwesomeIcon></button>
+            <ToastContainer></ToastContainer>
+            </div>
             <small>
             {
                 options.map( option => <div class="flex items-center pl-4 rounded border border-gray-200 dark:border-gray-700">
